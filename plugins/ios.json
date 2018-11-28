@@ -1,0 +1,46 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "call-number": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
+    },
+    "cordova-plugin-app-version": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
+    },
+    "cordova-plugin-ionic-keyboard": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
+    },
+    "cordova-plugin-ionic-webview": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
+    }
+  }
+}

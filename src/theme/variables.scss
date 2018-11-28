@@ -1,0 +1,181 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+ion-navbar{
+  .toolbar-title{
+    color: #fff;
+  }
+  .toolbar-background{
+    background: #228fba!important;
+    background: -moz-linear-gradient(left, #228fba 0%, #2a74a8 100%)!important;
+    background: -webkit-linear-gradient(left, #228fba 0%,#2a74a8 100%)!important;
+    background: linear-gradient(to right, #228fba 0%,#2a74a8 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228fba', endColorstr='#2a74a8',GradientType=1 )!important;
+  
+  }
+  
+}
+.bar-button{
+  color: #fff!important;
+}
+.tab-button[aria-selected=true] .tab-button-icon {
+  color: #fff!important;
+  }
+  .tab-button[aria-selected=true]{
+    color: #fff!important;
+  }
+  .tab-button .tab-button-icon {
+    color: #228fba!important;
+    }
+    .tab-button{
+      color: #228fba!important;
+    }
+  .back-button{
+    color: #fff!important;
+  }
+  .loginHeaderCls{
+    text-align: center;
+}
+ion-content{
+  background-color: #f5f5f5!important;
+}
+.loginContentCls{
+    margin: 20px 10px;
+    background: #ededed;
+    -webkit-box-shadow: 7px 6px 5px 0px rgba(250,205,207,1);
+    -moz-box-shadow: 7px 6px 5px 0px rgba(250,205,207,1);
+    box-shadow: 7px 6px 5px 0px rgba(250,205,207,1);
+    padding: 10px!important;
+    ion-label{
+        color: #29b1d6!important;
+    }
+}
+.radio-checked .radio-inner{
+  border-color: #f28633!important;
+}
+.registRememder{
+    padding: 0px!important;
+    ion-grid{
+        ion-row{
+            .RememberCls{
+                ion-checkbox{
+                    margin: 8px 6px 8px 2px!important;
+                }
+                .input-wrapper{
+                    height: 20px;
+                    label{
+                        margin: 0px!important;
+                    }
+                }
+            }
+        }
+    }
+}
+  ion-tabs{
+  .tabbar{
+    background: #f28633!important;
+  background: -moz-linear-gradient(left, #f28633 0%, #ed685f 100%)!important;
+  background: -webkit-linear-gradient(left, #f28633 0%,#ed685f 100%)!important;
+  background: linear-gradient(to right, #f28633 0%,#ed685f 100%)!important;
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f28633', endColorstr='#ed685f',GradientType=1 )!important;
+  }
+}
+  .buttonBut{
+    background: #228fba!important;
+    background: -moz-linear-gradient(left, #228fba 0%, #2a74a8 100%)!important;
+    background: -webkit-linear-gradient(left, #228fba 0%,#2a74a8 100%)!important;
+    background: linear-gradient(to right, #228fba 0%,#2a74a8 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#228fba', endColorstr='#2a74a8',GradientType=1 )!important;
+  }
+.footerBoxCls{
+  background: #f5f5f5;
+  padding: 5px;
+  text-align: center;
+}
+.toolbar-content-md{
+  text-align: center;
+  margin-right: 45px;
+}
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
