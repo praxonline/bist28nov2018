@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,App } from 'ionic-angular';
+import { Platform,App, ViewController,IonicPage, NavController,ToastController, NavParams,MenuController,LoadingController,AlertController } from 'ionic-angular';
+import { FormBuilder, FormGroup,Validators } from '@angular/forms';
+import { UserProvider } from '../../providers/user-services';
 
 /**
  * Generated class for the CategoryPage page.
@@ -14,14 +16,20 @@ import { IonicPage, NavController, NavParams,App } from 'ionic-angular';
   templateUrl: 'category.html',
 })
 export class CategoryPage {
-
-  constructor(public app:App, public navCtrl: NavController, public navParams: NavParams) {
+  loginForm: FormGroup;
+  public loading:any;
+  public categoriesList = [];
+  public categoriesName = "";
+  constructor(public _service:UserProvider,public platform: Platform,public viewCtrl: ViewController,public toastCtrl: ToastController,
+    public appCtrl: App,private alertCtrl: AlertController,public loadingCtrl: LoadingController,public builder: FormBuilder,public menuCtrl: MenuController,public navCtrl: NavController, public navParams: NavParams) {
+    this.categoriesList = this.navParams.get("MenuData");
+    this.categoriesName = this.navParams.get("name");
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoryPage');
   }
-  onClickNotes(){
-    this.app.getActiveNav().push("ItemsPage");
+  onClickNotes(obj){
+    this.appCtrl.getRootNav().push("ItemsPage");
   }
 }

@@ -7,12 +7,9 @@ import { MyApp } from './app.component';
 import { IonicStorageModule } from '@ionic/storage';
 import { UtilHelper } from '../helpers/util-helper';
 import { ApiProvider } from '../providers/api/index';
-import { GeneralProvider } from '../providers/general-services';
 import { HttpClientModule } from "@angular/common/http";
 import { Device } from "@ionic-native/device";
 import { AppVersion } from '@ionic-native/app-version';
-
-import { PatientProvider } from '../providers/patient-services';
 import { UserProvider } from '../providers/user-services';
 import { FormsModule } from '@angular/forms';
 @NgModule({
@@ -29,8 +26,8 @@ import { FormsModule } from '@angular/forms';
     MyApp
   ],
   providers: [
-    StatusBar,UtilHelper,Device,GeneralProvider,UserProvider,
-    SplashScreen,ApiProvider,AppVersion,PatientProvider,
+    StatusBar,UtilHelper,Device,UserProvider,
+    SplashScreen,ApiProvider,AppVersion,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

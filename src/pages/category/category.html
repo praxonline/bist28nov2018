@@ -6,7 +6,7 @@
 -->
 <ion-header class="headerBoxCls">
     <ion-navbar>
-      <ion-title>Shift 1</ion-title>
+      <ion-title>{{categoriesName}}</ion-title>
     </ion-navbar>
     <div>
       <ion-searchbar
@@ -18,18 +18,12 @@
     </div>
   </ion-header>
   <ion-content>
-      <ion-grid class="main-grid">
-  
-          <ion-row class="item-row">
-            <ion-col class="col" (click)="onClickNotes()">
-              <h4> Breakfast</h4>
-              <img src="assets/images/case-list-icon.png" class="logo-case-list">
-            </ion-col>
-            <ion-col class="col" (click)="onClickNotes()">
-              <h4> Breakfast</h4>
-              <img src="assets/images/calendar-icon.png" class="logo-calendar">
-            </ion-col>
-          </ion-row>
-    
-        </ion-grid>
+    <ion-grid class="main-grid">
+      <ion-row class="item-row" *ngFor="let cat of categoriesList;" >
+        <ion-col class="col" *ngFor="let C of cat;" (click)="onClickNotes(C)" >
+          <h4>{{C.name}}</h4>
+          <img src="assets/images/case-list-icon.png" class="logo-case-list">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-content>

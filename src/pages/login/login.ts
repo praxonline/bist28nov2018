@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Platform,App, ViewController,IonicPage, NavController, NavParams,MenuController,LoadingController,AlertController } from 'ionic-angular';
+import { Platform,App, ViewController,IonicPage, NavController,ToastController, NavParams,MenuController,LoadingController,AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
-
+import { UserProvider } from '../../providers/user-services';
 
 
 /**
@@ -19,7 +19,7 @@ import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 export class LoginPage {
   loginForm: FormGroup;
   public loading:any;
-  constructor(public platform: Platform,public viewCtrl: ViewController,
+  constructor(public _service:UserProvider,public platform: Platform,public viewCtrl: ViewController,public toastCtrl: ToastController,
     public appCtrl: App,private alertCtrl: AlertController,public loadingCtrl: LoadingController,public builder: FormBuilder,public menuCtrl: MenuController,public navCtrl: NavController, public navParams: NavParams) {
     this.loginForm = builder.group({
       'Username': ["", Validators.compose([Validators.required])],
@@ -33,29 +33,45 @@ export class LoginPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
+  showToast(message, duration) {
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: duration
+    });
+    toast.present();
+  }
   onCikNewAccount(){
     this.navCtrl.setRoot("SignUpPage");
   }
-  onCikForgetPass(){
-    if(this.loginForm.value.Username==""){
-      let alert = this.alertCtrl.create({
-        title: 'Error',
-        subTitle: 'Please enter Email id',
-        buttons: ['Ok']
-      });
-      alert.present();
-      return false;
-    }
-    let alert = this.alertCtrl.create({
-      title: 'Alert',
-      subTitle: 'Please check your mailId',
-      buttons: ['Ok']
-    });
-    alert.present();
-  } 
+ 
   onCikSaveUser(){
-    this.loginForm.reset();
-    this.navCtrl.push("HomePage");
+    let loader = this.loadingCtrl.create({
+      content: "Please wait..."
+    });
+    loader.present();
+    this._service.logIn(this.loginForm.value).subscribe(
+      res => {
+        loader.dismiss().then(() => {
+
+          if(res[0].person_id>0){  
+            if(res[0].custom_fields.Password==this.loginForm.value.userPass){
+              this.loginForm.reset();
+              this.navCtrl.push("HomePage");
+            }else{
+              this.showToast('', 200);
+            }
+          }else{
+            this.showToast('', 200);
+          }
+        });
+      },
+      err => {
+        loader.dismiss().then(() => {
+          console.log(err);
+          this.showToast('', 200);
+        });
+      }
+    );
   }
 
  

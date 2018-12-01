@@ -1,7 +1,6 @@
 import { HttpParams } from "@angular/common/http/src/params";
 import { HttpHeaders } from "@angular/common/http/src/headers";
 
-export * from "./general-services";
 
 
 export class RequestOptions {

@@ -11,7 +11,7 @@ import { AppVersion } from '@ionic-native/app-version';
 
 @Injectable()
 export class ApiProvider {
-  url: string = urls.api_url;
+  url: string = "http://bistrocare.com/pg/index.php/api/v1/";
   Version:String;
   constructor(
     public http: HttpClient,
@@ -37,13 +37,13 @@ export class ApiProvider {
     }
     if (params) {
 
-      params["app_ver"] = this.Version;
-      params["udid"] = this.device.uuid;
-      params["dev_model"] = this.device.model;
-      params["dev_os"] = this.device.platform;
-      params["device_type"] = this.device.platform;
+     // params["x-api-key"] = "8k4w4840cg0wg4ogow8cwcwksc4kgcwcc88swscg";
+      //params["udid"] = this.device.uuid;
+      //params["dev_model"] = this.device.model;
+      //params["dev_os"] = this.device.platform;
+     // params["device_type"] = this.device.platform;
       options.params = params;
-      //options.headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
+      options.headers = { 'Content-Type': 'application/x-www-form-urlencoded',"x-api-key":"8k4w4840cg0wg4ogow8cwcwksc4kgcwcc88swscg" };
     }
     let seq = this.http.post(this.url  + endpoint, body, options).share();
     seq.timeout(10000);
@@ -61,7 +61,38 @@ export class ApiProvider {
     })
     return seq;
   }
+  get(
+    endpoint: string,
+    params?: any,
+    options?: RequestOptions
+  ): Observable<any> {
+    if (!options) {
+      options = new RequestOptions();
+    }
+    if (params) {
 
+     // params["x-api-key"] = "8k4w4840cg0wg4ogow8cwcwksc4kgcwcc88swscg";
+  
+      options.params = params;
+      options.headers = { 'Content-Type': 'application/x-www-form-urlencoded',"x-api-key":"8k4w4840cg0wg4ogow8cwcwksc4kgcwcc88swscg" };
+    }
+
+    let seq = this.http.get(this.url  + endpoint,options).share();
+    seq.timeout(10000);
+    seq.subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        this.checkForUserToken(610);
+      }
+    );
+    seq.catch((err:Response) => {
+      let details = err.json();
+      return Observable.throw(details);
+    })
+    return seq;
+  }
   put(endpoint: string, body: any, options?: RequestOptions): Observable<any> {
     return this.http.put(this.url + "/" + endpoint, body, options);
   }
