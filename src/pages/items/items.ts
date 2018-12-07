@@ -15,8 +15,9 @@ import { DbProvider } from '../../helpers/db';
   templateUrl: 'items.html',
 })
 export class ItemsPage {
-  public ItemsDetail = [];
+  public ItemsDetail :any;
   public categoriesName = "";
+  public OrderQuantity= 1;
   constructor(public dbProvider:DbProvider,public navCtrl: NavController, public navParams: NavParams) {
     this.ItemsDetail = this.navParams.get("MenuData");
     this.categoriesName = this.navParams.get("name");
@@ -26,6 +27,7 @@ export class ItemsPage {
     console.log('ionViewDidLoad ItemsPage');
   }
   addCard(){
-
+    this.ItemsDetail.Qentity = this.OrderQuantity;
+      this.dbProvider.setCartlist(this.ItemsDetail);
   }
 }

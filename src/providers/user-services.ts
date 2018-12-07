@@ -125,4 +125,17 @@ export class UserProvider {
     );
     return seq;
   }
+  giftcards(){
+    let options = new RequestOptions();
+    let seq = this.api.get("giftcards",{} , options).share();
+    seq.subscribe(
+      res => {
+        
+      },
+      err => {
+        console.error("Register Error", JSON.stringify(err));
+      }
+    );
+    return seq;
+  }
 }

@@ -25,7 +25,7 @@ export class MenuPage {
     public appCtrl: App,private alertCtrl: AlertController,public loadingCtrl: LoadingController,public builder: FormBuilder,public menuCtrl: MenuController,public navCtrl: NavController, public navParams: NavParams) {
   }
   openShoppingList(){
-    this.appCtrl.getRootNav().push("ItemsPage",{MenuData:this.catItems});     
+    this.appCtrl.getRootNav().push("ItemsDetailPage");     
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
@@ -196,7 +196,8 @@ export class MenuPage {
                   "images_url": res[i].images.length>0?res[i].images[0].image_url:"",
                   "variations": res[i].variations,
                   "tier_pricing": res[i].tier_pricing,
-                  "locations": res[i].locations
+                  "locations": res[i].locations,
+                  "Qentity":0
                 });
               }
               i++;

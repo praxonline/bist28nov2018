@@ -21,6 +21,10 @@
           <div>
             {{ItemsDetail.name}}
           </div>
+          <ion-item>
+              <ion-label>Quantity</ion-label>
+              <ion-input [(ngModel)]="OrderQuantity" ></ion-input>
+            </ion-item>
           <div>
               <button ion-button (click)="addCard()">
                   Add In Card
@@ -28,4 +32,5 @@
           </div>
       </ion-card-content>
     </ion-card>
-</ion-content>
+
+  </ion-content>

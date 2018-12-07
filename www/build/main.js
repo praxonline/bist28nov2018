@@ -116,6 +116,15 @@ var UserProvider = /** @class */ (function () {
         });
         return seq;
     };
+    UserProvider.prototype.giftcards = function () {
+        var options = new __WEBPACK_IMPORTED_MODULE_5__index__["a" /* RequestOptions */]();
+        var seq = this.api.get("giftcards", {}, options).share();
+        seq.subscribe(function (res) {
+        }, function (err) {
+            console.error("Register Error", JSON.stringify(err));
+        });
+        return seq;
+    };
     UserProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */],
@@ -165,27 +174,27 @@ var map = {
 	],
 	"../pages/items-detail/items-detail.module": [
 		685,
-		5
+		0
 	],
 	"../pages/items/items.module": [
 		686,
-		4
+		5
 	],
 	"../pages/login/login.module": [
-		687,
-		3
+		690,
+		4
 	],
 	"../pages/menu/menu.module": [
 		688,
-		2
+		3
 	],
 	"../pages/setting/setting.module": [
-		689,
-		1
+		687,
+		2
 	],
 	"../pages/sign-up/sign-up.module": [
-		690,
-		0
+		689,
+		1
 	]
 };
 function webpackAsyncContext(req) {
@@ -370,10 +379,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 */
 var DbProvider = /** @class */ (function () {
     function DbProvider() {
+        this.UserCard = [];
         this.cart = new Array();
     }
+    DbProvider.prototype.setUserInfo = function (user) {
+        this.UserInfo = user;
+    };
+    DbProvider.prototype.getUserInfo = function () {
+        return this.UserInfo;
+    };
+    DbProvider.prototype.setCardInfo = function (user) {
+        this.UserCard.push(user);
+    };
+    DbProvider.prototype.getCardInfo = function () {
+        return this.UserCard;
+    };
     DbProvider.prototype.setCartlist = function (list) {
-        this.cart = list;
+        this.cart.push(list);
     };
     DbProvider.prototype.addToCart = function (item) {
     };
@@ -466,10 +488,10 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/items-detail/items-detail.module#ItemsDetailPageModule', name: 'ItemsDetailPage', segment: 'items-detail', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/items/items.module#ItemsPageModule', name: 'ItemsPage', segment: 'items', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/setting/setting.module#SettingPageModule', name: 'SettingPage', segment: 'setting', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/sign-up/sign-up.module#SignUpPageModule', name: 'SignUpPage', segment: 'sign-up', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/sign-up/sign-up.module#SignUpPageModule', name: 'SignUpPage', segment: 'sign-up', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot()

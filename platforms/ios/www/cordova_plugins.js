@@ -284,6 +284,14 @@ module.exports = [
     "clobbers": [
       "window.StatusBar"
     ]
+  },
+  {
+    "id": "cordova-plugin-datepicker.DatePicker",
+    "file": "plugins/cordova-plugin-datepicker/www/ios/DatePicker.js",
+    "pluginId": "cordova-plugin-datepicker",
+    "clobbers": [
+      "datePicker"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -299,7 +307,8 @@ module.exports.metadata =
   "cordova-plugin-ionic-webview": "2.1.0",
   "cordova-plugin-splashscreen": "5.0.2",
   "cordova-plugin-whitelist": "1.3.3",
-  "cordova-plugin-statusbar": "2.4.2"
+  "cordova-plugin-statusbar": "2.4.2",
+  "cordova-plugin-datepicker": "0.9.3"
 };
 // BOTTOM OF METADATA
 });

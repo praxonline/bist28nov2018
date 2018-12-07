@@ -5,14 +5,54 @@
   Ionic pages and navigation.
 -->
 <ion-header class="headerBoxCls">
-
   <ion-navbar>
-    <ion-title>ItemsDetail</ion-title>
+    <ion-title>Card</ion-title>
   </ion-navbar>
-
 </ion-header>
-
-
 <ion-content padding>
+  
 
+  <ion-card *ngFor="let itm of cardItems;">      
+    <ion-card-content>
+      
+      <img src="{{itm.images_url}}" class="logo-case-list">
+      <h4>{{itm.name}}</h4><span>{{itm.cost_price}}</span>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card >
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="OrderDate"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-select [(ngModel)]="OrderTime">
+        <ion-option value="f">Seft</ion-option>
+        <ion-option value="m">Seft1</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item *ngIf="cardInfo.length &gt; 0">
+      <ion-label>Card</ion-label>
+      <ion-select [(ngModel)]="UserCard">
+        <ion-option value="f">card 1</ion-option>
+        <ion-option value="m">Card 2</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+        
+        <div>
+          My Card Valance :
+          {{selectCard.value}}
+        </div>
+        <div>
+            remaining Valance after this order : {{remainingVal}}
+        </div>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="addCard()">
+       Pay
+      </button>
+    </ion-item> 
+  </ion-card>
 </ion-content>

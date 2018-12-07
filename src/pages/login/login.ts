@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Platform,App, ViewController,IonicPage, NavController,ToastController, NavParams,MenuController,LoadingController,AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { UserProvider } from '../../providers/user-services';
-
+import { DbProvider } from '../../helpers/db';
 
 /**
  * Generated class for the LoginPage page.
@@ -19,7 +19,7 @@ import { UserProvider } from '../../providers/user-services';
 export class LoginPage {
   loginForm: FormGroup;
   public loading:any;
-  constructor(public _service:UserProvider,public platform: Platform,public viewCtrl: ViewController,public toastCtrl: ToastController,
+  constructor(public dbProvider:DbProvider,public _service:UserProvider,public platform: Platform,public viewCtrl: ViewController,public toastCtrl: ToastController,
     public appCtrl: App,private alertCtrl: AlertController,public loadingCtrl: LoadingController,public builder: FormBuilder,public menuCtrl: MenuController,public navCtrl: NavController, public navParams: NavParams) {
     this.loginForm = builder.group({
       'Username': ["prashant.jain.1689@gmail.com", Validators.compose([Validators.required])],
@@ -55,8 +55,25 @@ export class LoginPage {
 
           if(res[0].person_id>0){  
             if(res[0].custom_fields.Password==this.loginForm.value.userPass){
-              this.loginForm.reset();
-              this.navCtrl.push("HomePage");
+              this.dbProvider.setUserInfo(res[0]);
+             
+              this._service.giftcards().subscribe(
+                card => { 
+                  for(var i=0;i<card.length;i++){
+                    if(card[i].customer_id==res[0].person_id){
+                      this.dbProvider.setCardInfo(card);
+                    }
+                  }
+                  this.loginForm.reset();
+                  this.navCtrl.push("HomePage");
+                },
+                err => {
+                  loader.dismiss().then(() => {
+                    console.log(err);
+                    this.showToast('', 200);
+                  });
+                }
+              );
             }else{
               this.showToast('', 200);
             }

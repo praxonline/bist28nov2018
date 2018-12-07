@@ -153,7 +153,8 @@ export class CategoryPage {
                   "images_url": res[i].images.length>0?res[i].images[0].image_url:"",
                   "variations": res[i].variations,
                   "tier_pricing": res[i].tier_pricing,
-                  "locations": res[i].locations
+                  "locations": res[i].locations,
+                  "Qentity":0
                 });
               }
               i++;

@@ -10,13 +10,26 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DbProvider {
     cart : Array<any>;
+    UserInfo : any;
+    UserCard : any = [];
   constructor() {
         this.cart = new Array();
   }
-
+  public setUserInfo(user){
+    this.UserInfo = user;
+  }
+  public getUserInfo(){
+    return  this.UserInfo ;
+  }
+  public setCardInfo(user){
+    this.UserCard.push(user);
+  }
+  public getCardInfo(){
+    return  this.UserCard ;
+  }
      public setCartlist(list)
     {
-       this.cart=list; 
+       this.cart.push(list); 
     }
     public addToCart(item)
     {

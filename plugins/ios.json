@@ -36,6 +36,9 @@
     },
     "cordova-plugin-statusbar": {
       "PACKAGE_NAME": "com.veershish.dawabazar"
+    },
+    "cordova-plugin-datepicker": {
+      "PACKAGE_NAME": "com.veershish.dawabazar"
     }
   },
   "dependent_plugins": {
