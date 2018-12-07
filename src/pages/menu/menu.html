@@ -6,7 +6,14 @@
 -->
 <ion-header class="headerBoxCls">
   <ion-navbar>
-    <ion-title></ion-title>
+    <ion-title>Menu</ion-title>
+    <ion-buttons end>
+      <div (click) = "openShoppingList()">
+        <ion-icon name="ios-cart-outline">
+              <span *ngIf = 'dbProvider.getCart().length > 0' class="badge-ios">{{dbProvider.getCart().length }}</span>
+        </ion-icon>
+      </div>
+    </ion-buttons>
   </ion-navbar>
   <div>
     <ion-searchbar

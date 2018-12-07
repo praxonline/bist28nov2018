@@ -22,8 +22,8 @@ export class LoginPage {
   constructor(public _service:UserProvider,public platform: Platform,public viewCtrl: ViewController,public toastCtrl: ToastController,
     public appCtrl: App,private alertCtrl: AlertController,public loadingCtrl: LoadingController,public builder: FormBuilder,public menuCtrl: MenuController,public navCtrl: NavController, public navParams: NavParams) {
     this.loginForm = builder.group({
-      'Username': ["", Validators.compose([Validators.required])],
-      'userPass': ["", Validators.compose([Validators.required])]
+      'Username': ["prashant.jain.1689@gmail.com", Validators.compose([Validators.required])],
+      'userPass': ["test", Validators.compose([Validators.required])]
     });
     this.loading = this.loadingCtrl.create({
       content: ''

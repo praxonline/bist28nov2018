@@ -7,6 +7,13 @@
 <ion-header class="headerBoxCls">
     <ion-navbar>
       <ion-title>{{categoriesName}}</ion-title>
+      <ion-buttons end>
+        <div (click) = "openShoppingList()">
+          <ion-icon name="ios-cart-outline">
+                <span *ngIf = 'dbProvider.getCart().length > 0' class="badge-ios">{{dbProvider.getCart().length }}</span>
+          </ion-icon>
+        </div>
+      </ion-buttons>
     </ion-navbar>
     <div>
       <ion-searchbar
@@ -21,8 +28,15 @@
     <ion-grid class="main-grid">
       <ion-row class="item-row" *ngFor="let cat of categoriesList;" >
         <ion-col class="col" *ngFor="let C of cat;" (click)="onClickNotes(C)" >
-          <h4>{{C.name}}</h4>
-          <img src="assets/images/case-list-icon.png" class="logo-case-list">
+          <span *ngIf="C.isMenu==1">
+              <h4>{{C.name}}</h4>
+              <img src="assets/images/case-list-icon.png" class="logo-case-list">
+          </span>
+          <span *ngIf="C.isMenu==0">
+              <h4>{{C.name}}</h4>
+              <img src="{{C.images_url}}" class="logo-case-list">
+              <div>{{C.cost_price}}</div>
+          </span>
         </ion-col>
       </ion-row>
     </ion-grid>

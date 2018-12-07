@@ -18,14 +18,6 @@ export class UserProvider {
 
   registerUser(data) {
     let options = new RequestOptions();
-
-    /*let formData:FormData = new FormData();
-    
-    formData.append('first_name',name[0] ); 
-    formData.append('last_name',name[1] ); 
-    formData.append('email', data.Username); 
-    formData.append('custom_fields', JSON.stringify({"Password":data.UserPassword}) ); 
-    */
    var name = data.UsernameAndSurname.split(" ");
    var Data ={
       "Name": data.UsernameAndSurname,
@@ -78,6 +70,21 @@ export class UserProvider {
     );
     return seq;
   }
+  getSubMenu(Id){
+    let options = new RequestOptions();
+ 
+    let seq = this.api.get("categories?categoriesId="+Id,{} , options).share();
+
+    seq.subscribe(
+      res => {
+        
+      },
+      err => {
+        console.error("Register Error", JSON.stringify(err));
+      }
+    );
+    return seq;
+  }
   getItemKit(Id){
     let options = new RequestOptions();
 
@@ -85,6 +92,32 @@ export class UserProvider {
     seq.subscribe(
       res => {
         
+      },
+      err => {
+        console.error("Register Error", JSON.stringify(err));
+      }
+    );
+    return seq;
+  }
+  sales(data) {
+    let options = new RequestOptions();
+   var name = data.UsernameAndSurname.split(" ");
+   var Data ={
+      "Name": data.UsernameAndSurname,
+      "first_name":name[0] ,
+      "last_name":name[0] ,
+      "email":data.Username ,
+      "custom_fields":{"Password":data.UserPassword}
+    };
+    let seq = this.api.post("sales", Data,{} , options).share();
+    seq.subscribe(
+      res => {
+        if (res.token) {
+          let token = res.token;
+
+          this.storage.set("token", JSON.stringify(token));
+          this.config.set("token", token.token);
+        }
       },
       err => {
         console.error("Register Error", JSON.stringify(err));

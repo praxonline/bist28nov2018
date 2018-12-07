@@ -25814,6 +25814,10 @@ ion-content {
   border: 1px solid #4d9fe4;
 }
 
+page-login ion-card {
+  padding-bottom: 20px;
+}
+
 page-login .formActionBut button {
   color: #4d9fe4;
   background-color: #fff;
@@ -25825,6 +25829,10 @@ page-login .formActionBut button {
   right: 15px;
 }
 
+page-sign-up ion-card {
+  padding-bottom: 20px;
+}
+
 page-sign-up .formActionBut button {
   color: #4d9fe4;
   background-color: #fff;
@@ -25832,6 +25840,6 @@ page-sign-up .formActionBut button {
   padding: 0 1em;
   border: 1px solid #4d9fe4;
   position: absolute;
-  bottom: -30px;
+  bottom: -10px;
   right: 15px;
 }

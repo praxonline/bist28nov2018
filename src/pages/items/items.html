@@ -6,28 +6,26 @@
 -->
 <ion-header class="headerBoxCls">
   <ion-navbar>
-    <ion-title>Breakfast</ion-title>
+    <ion-title>{{categoriesName}}</ion-title>
   </ion-navbar>
 
 </ion-header>
-
-
 <ion-content padding>
     <ion-card>      
-        <ion-card-content>
-            <ion-grid class="main-grid">
-                <ion-row class="item-row">
-                  <ion-col col-3 >
-                    <img src="assets/images/case-list-icon.png" width="100px"  >
-                  </ion-col>
-                  <ion-col col-9 >
-                      <div>Test Items 1 <span>10Rs</span></div>
-                      <div>Items Short detail</div>
-                  </ion-col>
-                </ion-row>
-            </ion-grid>
-        </ion-card-content>
-      
-      </ion-card>
-      
+      <ion-card-content>
+          <ion-slides style="max-height: 200px">
+              <ion-slide  *ngFor="let img of ItemsDetail.images;">
+                  <img src="{{img.image_url}}" />
+              </ion-slide>
+          </ion-slides>
+          <div>
+            {{ItemsDetail.name}}
+          </div>
+          <div>
+              <button ion-button (click)="addCard()">
+                  Add In Card
+                </button>
+          </div>
+      </ion-card-content>
+    </ion-card>
 </ion-content>

@@ -11,6 +11,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { Device } from "@ionic-native/device";
 import { AppVersion } from '@ionic-native/app-version';
 import { UserProvider } from '../providers/user-services';
+import { DbProvider } from '../helpers/db';
 import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { FormsModule } from '@angular/forms';
   ],
   providers: [
     StatusBar,UtilHelper,Device,UserProvider,
-    SplashScreen,ApiProvider,AppVersion,
+    SplashScreen,ApiProvider,AppVersion,DbProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
