@@ -22,35 +22,45 @@
 
   <ion-card >
     <ion-item>
-      <ion-label>Date</ion-label>
+        <ion-label>Pre Order</ion-label>
+    <ion-toggle [(ngModel)]="isPreOrder"></ion-toggle>
+    </ion-item>
+    <ion-item *ngIf="isPreOrder">
+      <ion-label>Pre-order Date</ion-label>
       <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="OrderDate"></ion-datetime>
     </ion-item>
-    <ion-item>
-      <ion-label>Time</ion-label>
+    <ion-item *ngIf="isPreOrder">
+      <ion-label>Pre-order Time</ion-label>
       <ion-select [(ngModel)]="OrderTime">
-        <ion-option value="f">Seft</ion-option>
-        <ion-option value="m">Seft1</ion-option>
+        <ion-option value="Shift 1 > Breakfast">Shift 1 &gt; Breakfast</ion-option>
+        <ion-option value="Shift 1 > Lunch">Shift 1 &gt; Lunch</ion-option>
+        <ion-option value="Shift 2 > Snacks">Shift 2 &gt; Snacks</ion-option>
+        <ion-option value="Shift 2 > Dinner">Shift 2 &gt; Dinner</ion-option>
+        <ion-option value="Shift 3 > 10PM">Shift 3 &gt; 10PM</ion-option>
+        <ion-option value="Shift 3 > 2AM">Shift 3 &gt; 2AM</ion-option>
+        <ion-option value="Shift 3 > 5AM">Shift 3 &gt; 5AM</ion-option>
       </ion-select>
     </ion-item>
-    <ion-item *ngIf="cardInfo.length &gt; 0">
+    <ion-item *ngIf="cardInfo.length &gt; 1">
       <ion-label>Card</ion-label>
-      <ion-select [(ngModel)]="UserCard">
-        <ion-option value="f">card 1</ion-option>
-        <ion-option value="m">Card 2</ion-option>
+      <ion-select  (ionChange)="onSelectChange($event)">
+        <ion-option *ngFor="let ca of cardInfo;" value="{{ca.id}}">{{ca.giftcard_number}}</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-        
         <div>
           My Card Valance :
-          {{selectCard.value}}
+         <div>
+          <span *ngIf="selectCard">{{selectCard.value}}</span>
+         </div> 
         </div>
         <div>
-            remaining Valance after this order : {{remainingVal}}
+            remaining Valance after this order : 
+            <div>{{remainingVal}}</div>
         </div>
     </ion-item>
     <ion-item>
-      <button ion-button (click)="addCard()">
+      <button style="width: 100%;padding: 10px 0px;" ion-button (click)="addCard()">
        Pay
       </button>
     </ion-item> 

@@ -13,13 +13,14 @@
 <ion-content padding>
     <ion-card>      
       <ion-card-content>
-          <ion-slides style="max-height: 200px">
+          <ion-slides >
               <ion-slide  *ngFor="let img of ItemsDetail.images;">
                   <img src="{{img.image_url}}" />
               </ion-slide>
           </ion-slides>
           <div>
             {{ItemsDetail.name}}
+            {{ItemsDetail.unit_price}}
           </div>
           <ion-item>
               <ion-label>Quantity</ion-label>

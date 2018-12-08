@@ -29,7 +29,7 @@ export class CategoryPage {
     this.categoriesName = this.navParams.get("name");
   }
   openShoppingList(){
-    this.appCtrl.getRootNav().push("ItemsPage",{MenuData:this.catItems});     
+    this.appCtrl.getRootNav().push("ItemsDetailPage");     
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad CategoryPage');

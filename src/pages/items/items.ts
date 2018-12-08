@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ToastController } from 'ionic-angular';
 import { DbProvider } from '../../helpers/db';
 
 /**
@@ -18,7 +18,7 @@ export class ItemsPage {
   public ItemsDetail :any;
   public categoriesName = "";
   public OrderQuantity= 1;
-  constructor(public dbProvider:DbProvider,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public toastCtrl: ToastController,public dbProvider:DbProvider,public navCtrl: NavController, public navParams: NavParams) {
     this.ItemsDetail = this.navParams.get("MenuData");
     this.categoriesName = this.navParams.get("name");
   }
@@ -29,5 +29,13 @@ export class ItemsPage {
   addCard(){
     this.ItemsDetail.Qentity = this.OrderQuantity;
       this.dbProvider.setCartlist(this.ItemsDetail);
+    this.showToast("Add Items in card",200);
+  }
+  showToast(message, duration) {
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: duration
+    });
+    toast.present();
   }
 }

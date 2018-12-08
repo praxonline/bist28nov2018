@@ -52,7 +52,6 @@ export class LoginPage {
     this._service.logIn(this.loginForm.value).subscribe(
       res => {
         loader.dismiss().then(() => {
-
           if(res[0].person_id>0){  
             if(res[0].custom_fields.Password==this.loginForm.value.userPass){
               this.dbProvider.setUserInfo(res[0]);
@@ -61,7 +60,7 @@ export class LoginPage {
                 card => { 
                   for(var i=0;i<card.length;i++){
                     if(card[i].customer_id==res[0].person_id){
-                      this.dbProvider.setCardInfo(card);
+                      this.dbProvider.setCardInfo(card[i]);
                     }
                   }
                   this.loginForm.reset();
