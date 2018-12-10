@@ -19,16 +19,17 @@
               </ion-slide>
           </ion-slides>
           <div>
-            {{ItemsDetail.name}}
-            {{ItemsDetail.unit_price}}
+            <h4>{{ItemsDetail.name}}<h4>
+              <br />
+            {{ItemsDetail.unit_price}} Points
           </div>
           <ion-item>
               <ion-label>Quantity</ion-label>
-              <ion-input [(ngModel)]="OrderQuantity" ></ion-input>
+              <ion-input [(ngModel)]="OrderQuantity" ></ion-input> (Click to change quantity)
             </ion-item>
           <div>
               <button ion-button (click)="addCard()">
-                  Add In Card
+                  Add to cart
                 </button>
           </div>
       </ion-card-content>

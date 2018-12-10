@@ -6,7 +6,7 @@
 -->
 <ion-header class="headerBoxCls">
   <ion-navbar>
-    <ion-title>Card</ion-title>
+    <ion-title>My Cart</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content padding>
@@ -16,14 +16,14 @@
     <ion-card-content>
       
       <img src="{{itm.images_url}}" class="logo-case-list">
-      <h4>{{itm.name}}</h4><span>{{itm.cost_price}}</span>
+      <h4>{{itm.name}}</h4><span>{{itm.cost_price}} Points</span>
     </ion-card-content>
   </ion-card>
 
   <ion-card >
     <ion-item>
         <ion-label>Pre Order</ion-label>
-    <ion-toggle [(ngModel)]="isPreOrder"></ion-toggle>
+    <ion-toggle [(ngModel)]="isPreOrder"></ion-toggle> 
     </ion-item>
     <ion-item *ngIf="isPreOrder">
       <ion-label>Pre-order Date</ion-label>

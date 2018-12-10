@@ -72,7 +72,7 @@ var HomePage = /** @class */ (function () {
     }
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/pages/home/home.html"*/'<ion-tabs>\n    <ion-tab [root]="menuRoot" tabTitle="Menu" tabIcon="information-circle"></ion-tab>\n    <ion-tab [root]="filterRoot" tabTitle="Order List" tabIcon="information-circle"></ion-tab>\n    <ion-tab [root]="settingRoot" tabTitle="Setting" tabIcon="information-circle"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/prakash/Desktop/Project/bist28nov2018/src/pages/home/home.html"*/'<ion-tabs>\n    <ion-tab [root]="menuRoot" tabTitle="Menu" tabIcon="information-circle"></ion-tab>\n    <ion-tab [root]="filterRoot" tabTitle="Order List" tabIcon="information-circle"></ion-tab>\n    <ion-tab [root]="settingRoot" tabTitle="Setting" tabIcon="information-circle"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/prakash/Desktop/Project/bist28nov2018/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */]])
     ], HomePage);
