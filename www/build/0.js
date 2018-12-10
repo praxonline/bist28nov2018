@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 685:
+/***/ 690:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemsDetailPageModule", function() { return ItemsDetailPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__items_detail__ = __webpack_require__(694);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_date_picker__ = __webpack_require__(695);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__items_detail__ = __webpack_require__(699);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_date_picker__ = __webpack_require__(700);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -43,7 +43,7 @@ var ItemsDetailPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 694:
+/***/ 699:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -83,12 +83,12 @@ var ItemsDetailPage = /** @class */ (function () {
         this.cardInfo = [];
         this.amount = 0;
         this.isPreOrder = true;
+        this.OrderDate = new Date().toISOString();
     }
     ItemsDetailPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad ItemsDetailPage');
         this.cardItems = this.dbProvider.getCart();
         this.cardInfo = this.dbProvider.getCardInfo();
-        console.log(this.cardInfo);
         if (this.cardInfo.length == 1) {
             this.selectCard = this.cardInfo[0];
         }
@@ -139,7 +139,7 @@ var ItemsDetailPage = /** @class */ (function () {
     };
     ItemsDetailPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-items-detail',template:/*ion-inline-start:"/Users/prakash/Desktop/Project/bist28nov2018/src/pages/items-detail/items-detail.html"*/'<!--\n  Generated template for the ItemsDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="headerBoxCls">\n  <ion-navbar>\n    <ion-title>Card</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  \n\n  <ion-card *ngFor="let itm of cardItems;">      \n    <ion-card-content>\n      \n      <img src="{{itm.images_url}}" class="logo-case-list">\n      <h4>{{itm.name}}</h4><span>{{itm.cost_price}}</span>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card >\n    <ion-item>\n        <ion-label>Pre Order</ion-label>\n    <ion-toggle [(ngModel)]="isPreOrder"></ion-toggle>\n    </ion-item>\n    <ion-item *ngIf="isPreOrder">\n      <ion-label>Pre-order Date</ion-label>\n      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="OrderDate"></ion-datetime>\n    </ion-item>\n    <ion-item *ngIf="isPreOrder">\n      <ion-label>Pre-order Time</ion-label>\n      <ion-select [(ngModel)]="OrderTime">\n        <ion-option value="Shift 1 > Breakfast">Shift 1 &gt; Breakfast</ion-option>\n        <ion-option value="Shift 1 > Lunch">Shift 1 &gt; Lunch</ion-option>\n        <ion-option value="Shift 2 > Snacks">Shift 2 &gt; Snacks</ion-option>\n        <ion-option value="Shift 2 > Dinner">Shift 2 &gt; Dinner</ion-option>\n        <ion-option value="Shift 3 > 10PM">Shift 3 &gt; 10PM</ion-option>\n        <ion-option value="Shift 3 > 2AM">Shift 3 &gt; 2AM</ion-option>\n        <ion-option value="Shift 3 > 5AM">Shift 3 &gt; 5AM</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item *ngIf="cardInfo.length &gt; 1">\n      <ion-label>Card</ion-label>\n      <ion-select  (ionChange)="onSelectChange($event)">\n        <ion-option *ngFor="let ca of cardInfo;" value="{{ca.id}}">{{ca.giftcard_number}}</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n        <div>\n          My Card Valance :\n         <div>\n          <span *ngIf="selectCard">{{selectCard.value}}</span>\n         </div> \n        </div>\n        <div>\n            remaining Valance after this order : \n            <div>{{remainingVal}}</div>\n        </div>\n    </ion-item>\n    <ion-item>\n      <button style="width: 100%;padding: 10px 0px;" ion-button (click)="addCard()">\n       Pay\n      </button>\n    </ion-item> \n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/prakash/Desktop/Project/bist28nov2018/src/pages/items-detail/items-detail.html"*/,
+            selector: 'page-items-detail',template:/*ion-inline-start:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/pages/items-detail/items-detail.html"*/'<!--\n  Generated template for the ItemsDetailPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="headerBoxCls">\n  <ion-navbar>\n    <ion-title>My Cart</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n  \n\n  <ion-card *ngFor="let itm of cardItems;">      \n    <ion-card-content>\n      \n      <img src="{{itm.images_url}}" class="logo-case-list">\n      <h4>{{itm.name}}</h4><span>{{itm.cost_price}} Points</span>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card >\n    <ion-item>\n        <ion-label>Pre Order</ion-label>\n    <ion-toggle [(ngModel)]="isPreOrder"></ion-toggle> \n    </ion-item>\n    <ion-item *ngIf="isPreOrder">\n      <ion-label>Pre-order Date</ion-label>\n      <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="OrderDate"></ion-datetime>\n    </ion-item>\n    <ion-item *ngIf="isPreOrder">\n      <ion-label>Pre-order Time</ion-label>\n      <ion-select [(ngModel)]="OrderTime">\n        <ion-option value="Shift 1 > Breakfast">Shift 1 &gt; Breakfast</ion-option>\n        <ion-option value="Shift 1 > Lunch">Shift 1 &gt; Lunch</ion-option>\n        <ion-option value="Shift 2 > Snacks">Shift 2 &gt; Snacks</ion-option>\n        <ion-option value="Shift 2 > Dinner">Shift 2 &gt; Dinner</ion-option>\n        <ion-option value="Shift 3 > 10PM">Shift 3 &gt; 10PM</ion-option>\n        <ion-option value="Shift 3 > 2AM">Shift 3 &gt; 2AM</ion-option>\n        <ion-option value="Shift 3 > 5AM">Shift 3 &gt; 5AM</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item *ngIf="cardInfo.length &gt; 1">\n      <ion-label>Card</ion-label>\n      <ion-select  (ionChange)="onSelectChange($event)">\n        <ion-option *ngFor="let ca of cardInfo;" value="{{ca.id}}">{{ca.giftcard_number}}</ion-option>\n      </ion-select>\n    </ion-item>\n    <ion-item>\n        <div>\n          My Card Balance :\n         <div>\n          <span *ngIf="selectCard">{{selectCard.value}}</span>\n         </div> \n        </div>\n        <div>\n            Remaining Balance after this order : \n            <div>{{remainingVal}}</div>\n        </div>\n    </ion-item>\n    <ion-item>\n      <button style="width: 100%;padding: 10px 10px;" ion-button (click)="addCard()">\n       Pay\n      </button>\n    </ion-item> \n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/pages/items-detail/items-detail.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_3__providers_user_services__["a" /* UserProvider */], __WEBPACK_IMPORTED_MODULE_2__helpers_db__["a" /* DbProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
     ], ItemsDetailPage);
@@ -150,7 +150,7 @@ var ItemsDetailPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 695:
+/***/ 700:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

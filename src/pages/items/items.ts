@@ -29,7 +29,7 @@ export class ItemsPage {
   addCard(){
     this.ItemsDetail.Qentity = this.OrderQuantity;
       this.dbProvider.setCartlist(this.ItemsDetail);
-    this.showToast("Item successfully added to cart",400);
+    this.showToast("Items successfully added to cart",400);
   }
   showToast(message, duration) {
     let toast = this.toastCtrl.create({

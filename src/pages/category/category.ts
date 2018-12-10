@@ -169,7 +169,7 @@ export class CategoryPage {
       },
       err => {
         loader.dismiss().then(() => {
-          this.showToast('', 200);
+          this.showToast('', 400);
         });
       }
     );

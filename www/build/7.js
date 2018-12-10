@@ -70,9 +70,13 @@ var FilterPage = /** @class */ (function () {
     FilterPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad FilterPage');
     };
+    FilterPage.prototype.startApp = function () {
+        localStorage.setItem("IsStart", "true");
+        this.navCtrl.setRoot("LoginPage");
+    };
     FilterPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-filter',template:/*ion-inline-start:"/Users/prakash/Desktop/Project/bist28nov2018/src/pages/filter/filter.html"*/'<!--\n  Generated template for the FilterPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>filter</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/Users/prakash/Desktop/Project/bist28nov2018/src/pages/filter/filter.html"*/,
+            selector: 'page-filter',template:/*ion-inline-start:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/pages/filter/filter.html"*/'<!--\n  Generated template for the FilterPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content padding>\n  <ion-slides>\n      <ion-slide>\n          <img src="assets/images/1.jpeg" style="height: 300px;" />\n      </ion-slide>\n      <ion-slide>\n          <img src="assets/images/2.jpeg" style="height: 300px;"/>\n      </ion-slide>\n      <ion-slide>\n          <img src="assets/images/3.jpeg" style="height: 300px;"/>\n      </ion-slide>\n      <ion-slide>\n          <img src="assets/images/4.jpeg" style="height: 300px;"/>\n      </ion-slide>\n      <ion-slide>\n          <img src="assets/images/5.jpeg" style="height: 300px;"/>\n      </ion-slide>\n      <ion-slide>\n          <img src="assets/images/6.jpeg" style="height: 300px;"/>\n      </ion-slide>\n  </ion-slides>\n  <ion-item>\n    <button style="width: 100%;padding: 10px 10px;" ion-button (click)="startApp()">\n      Start\n    </button>\n  </ion-item> \n</ion-content>\n'/*ion-inline-end:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/pages/filter/filter.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
     ], FilterPage);

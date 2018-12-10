@@ -22,7 +22,7 @@ export class ItemsDetailPage {
   public amount=0;
   public isPreOrder:boolean = true;
   public OrderTime:string ;
-  public OrderDate:string ;
+  public OrderDate:any = new Date().toISOString() ;
   constructor(public appCtrl: App,public toastCtrl: ToastController,public loadingCtrl: LoadingController,public userProvider:UserProvider, public dbProvider:DbProvider,public navCtrl: NavController, public navParams: NavParams) {
 
   }
@@ -31,7 +31,7 @@ export class ItemsDetailPage {
     console.log('ionViewDidLoad ItemsDetailPage');
     this.cardItems  =  this.dbProvider.getCart();
     this.cardInfo = this.dbProvider.getCardInfo();
-    console.log(this.cardInfo );
+
     if(this.cardInfo.length ==1){
       this.selectCard =this.cardInfo[0];
     }

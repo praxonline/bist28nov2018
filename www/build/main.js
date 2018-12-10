@@ -215,27 +215,27 @@ var map = {
 		6
 	],
 	"../pages/items-detail/items-detail.module": [
-		685,
+		690,
 		0
 	],
 	"../pages/items/items.module": [
-		686,
+		689,
 		5
 	],
 	"../pages/login/login.module": [
-		687,
+		685,
 		4
 	],
 	"../pages/menu/menu.module": [
-		688,
+		686,
 		3
 	],
 	"../pages/setting/setting.module": [
-		689,
+		687,
 		2
 	],
 	"../pages/sign-up/sign-up.module": [
-		690,
+		688,
 		1
 	]
 };
@@ -528,12 +528,12 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/category/category.module#CategoryPageModule', name: 'CategoryPage', segment: 'category', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/filter/filter.module#FilterPageModule', name: 'FilterPage', segment: 'filter', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/home/home.module#HomePageModule', name: 'HomePage', segment: 'home', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/items-detail/items-detail.module#ItemsDetailPageModule', name: 'ItemsDetailPage', segment: 'items-detail', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/items/items.module#ItemsPageModule', name: 'ItemsPage', segment: 'items', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/setting/setting.module#SettingPageModule', name: 'SettingPage', segment: 'setting', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/sign-up/sign-up.module#SignUpPageModule', name: 'SignUpPage', segment: 'sign-up', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/sign-up/sign-up.module#SignUpPageModule', name: 'SignUpPage', segment: 'sign-up', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/items/items.module#ItemsPageModule', name: 'ItemsPage', segment: 'items', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/items-detail/items-detail.module#ItemsDetailPageModule', name: 'ItemsDetailPage', segment: 'items-detail', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_6__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -591,12 +591,18 @@ var MyApp = /** @class */ (function () {
         this.events = events;
         this.config = config;
         this.storage = storage;
-        this.rootPage = "LoginPage";
+        this.rootPage = "";
         platform.ready().then(function () {
             // Okay, so the platform is ready and our plugins are available.
             // Here you can do any higher level native things you might need.
             statusBar.styleDefault();
             splashScreen.hide();
+            if (localStorage.getItem("IsStart") != null) {
+                _this.rootPage = "LoginPage";
+            }
+            else {
+                _this.rootPage = "FilterPage";
+            }
         });
         platform.registerBackButtonAction(function () {
             var alert = _this.alertCtrl.create({
@@ -619,7 +625,7 @@ var MyApp = /** @class */ (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/prakash/Desktop/Project/bist28nov2018/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/prakash/Desktop/Project/bist28nov2018/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/app/app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_5__providers_user_services__["a" /* UserProvider */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */],

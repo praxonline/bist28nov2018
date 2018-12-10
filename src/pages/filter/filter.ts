@@ -17,9 +17,11 @@ export class FilterPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad FilterPage');
   }
-
+  startApp(){
+    localStorage.setItem("IsStart","true");
+    this.navCtrl.setRoot("LoginPage");
+  }
 }

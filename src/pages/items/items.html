@@ -11,28 +11,29 @@
 
 </ion-header>
 <ion-content padding>
-    <ion-card>      
-      <ion-card-content>
-          <ion-slides >
-              <ion-slide  *ngFor="let img of ItemsDetail.images;">
-                  <img src="{{img.image_url}}" />
-              </ion-slide>
-          </ion-slides>
+  <ion-card>      
+    <ion-card-content>
+        <ion-slides >
+            <ion-slide  *ngFor="let img of ItemsDetail.images;">
+                <img src="{{img.image_url}}" />
+            </ion-slide>
+        </ion-slides>
+        <div>
+          <h4>{{ItemsDetail.name}}</h4>
           <div>
-            <h4>{{ItemsDetail.name}}<h4>
-              <br />
-            {{ItemsDetail.unit_price}} Points
+              {{ItemsDetail.unit_price}} Points
           </div>
-          <ion-item>
-              <ion-label>Quantity</ion-label>
-              <ion-input [(ngModel)]="OrderQuantity" ></ion-input> (Click to change quantity)
-            </ion-item>
-          <div>
-              <button ion-button (click)="addCard()">
-                  Add to cart
-                </button>
-          </div>
-      </ion-card-content>
-    </ion-card>
-
-  </ion-content>
+        </div>
+        <ion-item>
+            <ion-label>Quantity</ion-label>
+            <ion-input [(ngModel)]="OrderQuantity" ></ion-input> 
+            (Click to change quantity)
+        </ion-item>
+        <div>
+            <button ion-button (click)="addCard()">
+                Add to cart
+            </button>
+        </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

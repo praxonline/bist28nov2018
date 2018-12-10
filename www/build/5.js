@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 686:
+/***/ 689:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemsPageModule", function() { return ItemsPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__items__ = __webpack_require__(696);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__items__ = __webpack_require__(698);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var ItemsPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 696:
+/***/ 698:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -81,7 +81,7 @@ var ItemsPage = /** @class */ (function () {
     ItemsPage.prototype.addCard = function () {
         this.ItemsDetail.Qentity = this.OrderQuantity;
         this.dbProvider.setCartlist(this.ItemsDetail);
-        this.showToast("Add Items in card", 200);
+        this.showToast("Items successfully added to cart", 400);
     };
     ItemsPage.prototype.showToast = function (message, duration) {
         var toast = this.toastCtrl.create({
@@ -92,7 +92,7 @@ var ItemsPage = /** @class */ (function () {
     };
     ItemsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-items',template:/*ion-inline-start:"/Users/prakash/Desktop/Project/bist28nov2018/src/pages/items/items.html"*/'<!--\n  Generated template for the ItemsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="headerBoxCls">\n  <ion-navbar>\n    <ion-title>{{categoriesName}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\n    <ion-card>      \n      <ion-card-content>\n          <ion-slides >\n              <ion-slide  *ngFor="let img of ItemsDetail.images;">\n                  <img src="{{img.image_url}}" />\n              </ion-slide>\n          </ion-slides>\n          <div>\n            {{ItemsDetail.name}}\n            {{ItemsDetail.unit_price}}\n          </div>\n          <ion-item>\n              <ion-label>Quantity</ion-label>\n              <ion-input [(ngModel)]="OrderQuantity" ></ion-input>\n            </ion-item>\n          <div>\n              <button ion-button (click)="addCard()">\n                  Add In Card\n                </button>\n          </div>\n      </ion-card-content>\n    </ion-card>\n\n  </ion-content>\n'/*ion-inline-end:"/Users/prakash/Desktop/Project/bist28nov2018/src/pages/items/items.html"*/,
+            selector: 'page-items',template:/*ion-inline-start:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/pages/items/items.html"*/'<!--\n  Generated template for the ItemsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header class="headerBoxCls">\n  <ion-navbar>\n    <ion-title>{{categoriesName}}</ion-title>\n  </ion-navbar>\n\n</ion-header>\n<ion-content padding>\n  <ion-card>      \n    <ion-card-content>\n        <ion-slides >\n            <ion-slide  *ngFor="let img of ItemsDetail.images;">\n                <img src="{{img.image_url}}" />\n            </ion-slide>\n        </ion-slides>\n        <div>\n          <h4>{{ItemsDetail.name}}</h4>\n          <div>\n              {{ItemsDetail.unit_price}} Points\n          </div>\n        </div>\n        <ion-item>\n            <ion-label>Quantity</ion-label>\n            <ion-input [(ngModel)]="OrderQuantity" ></ion-input> \n            (Click to change quantity)\n        </ion-item>\n        <div>\n            <button ion-button (click)="addCard()">\n                Add to cart\n            </button>\n        </div>\n    </ion-card-content>\n  </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/pages/items/items.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */], __WEBPACK_IMPORTED_MODULE_2__helpers_db__["a" /* DbProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])
     ], ItemsPage);

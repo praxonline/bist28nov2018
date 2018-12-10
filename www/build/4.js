@@ -1,6 +1,6 @@
 webpackJsonp([4],{
 
-/***/ 687:
+/***/ 685:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(697);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(694);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var LoginPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 697:
+/***/ 694:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -146,7 +146,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/prakash/Desktop/Project/bist28nov2018/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row style="margin-top: 50px;">\n      <ion-col col-3 class="headerLab">Login</ion-col>\n      <ion-col col-9 class="headerLab" style="text-align: right;" (click)="onCikNewAccount()">New? Create account</ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12>\n        <form [formGroup]="loginForm" style="position: relative;" >\n          <ion-card>        \n            <ion-card-content>\n              <div>\n                <button class="actionBut" ion-button>Connect with Facebook</button>\n              </div>\n              <div>\n                <button class="actionBut" ion-button>Connect with Google</button>\n              </div>\n              <div>\n                <ion-list>\n                  <ion-item>\n                    <ion-label floating>Username</ion-label>\n                    <ion-input type="text" formControlName="Username" value=""></ion-input>\n                  </ion-item>\n                  <ion-item>\n                    <ion-label floating>Password</ion-label>\n                    <ion-input formControlName="userPass" type="password"></ion-input>\n                  </ion-item>\n                </ion-list>\n              </div>\n            </ion-card-content>\n          </ion-card>\n          <div class="formActionBut">\n            <button ion-button [disabled]="!loginForm.valid" (click)="onCikSaveUser()">\n              <ion-icon  name="arrow-forward" ></ion-icon>\n            </button>\n          </div>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/prakash/Desktop/Project/bist28nov2018/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row style="margin-top: 50px;">\n      <ion-col col-3 class="headerLab">Login</ion-col>\n      <ion-col col-9 class="headerLab" style="text-align: right;" (click)="onCikNewAccount()">New? Create account</ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col col-12>\n        <form [formGroup]="loginForm" style="position: relative;" >\n          <ion-card>        \n            <ion-card-content>\n              <div>\n                <button class="actionBut" ion-button>Connect with Facebook</button>\n              </div>\n              <div>\n                <button class="actionBut" ion-button>Connect with Google</button>\n              </div>\n              <div>\n                <ion-list>\n                  <ion-item>\n                    <ion-label floating>Username</ion-label>\n                    <ion-input type="text" formControlName="Username" value=""></ion-input>\n                  </ion-item>\n                  <ion-item>\n                    <ion-label floating>Password</ion-label>\n                    <ion-input formControlName="userPass" type="password"></ion-input>\n                  </ion-item>\n                </ion-list>\n              </div>\n            </ion-card-content>\n          </ion-card>\n          <div class="formActionBut">\n            <button ion-button [disabled]="!loginForm.valid" (click)="onCikSaveUser()">\n              <ion-icon  name="arrow-forward" >Login </ion-icon>\n            </button>\n          </div>\n        </form>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/Users/prashantjain/Desktop/Project/plugins and old helper applications/bist/bist28nov2018/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__helpers_db__["a" /* DbProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_user_services__["a" /* UserProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* Platform */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* ViewController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* ToastController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["b" /* App */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* LoadingController */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* MenuController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavParams */]])

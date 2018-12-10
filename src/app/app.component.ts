@@ -9,7 +9,7 @@ import { UserProvider } from '../providers/user-services';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = "LoginPage";
+  rootPage:any = "";
   
   constructor(public loadingCtrl: LoadingController,private _service:UserProvider,
               public alertCtrl:AlertController, public events: Events,
@@ -20,7 +20,11 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
- 
+        if(localStorage.getItem("IsStart")!=null){
+          this.rootPage="LoginPage" ; 
+        }else{
+           this.rootPage="FilterPage"; 
+        }
     });
     platform.registerBackButtonAction(() => {
       const alert = this.alertCtrl.create({
