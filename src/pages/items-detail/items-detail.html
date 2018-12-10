@@ -49,18 +49,18 @@
     </ion-item>
     <ion-item>
         <div>
-          My Card Valance :
+          My Card Balance :
          <div>
           <span *ngIf="selectCard">{{selectCard.value}}</span>
          </div> 
         </div>
         <div>
-            remaining Valance after this order : 
+            Remaining Balance after this order : 
             <div>{{remainingVal}}</div>
         </div>
     </ion-item>
     <ion-item>
-      <button style="width: 100%;padding: 10px 0px;" ion-button (click)="addCard()">
+      <button style="width: 100%;padding: 10px 10px;" ion-button (click)="addCard()">
        Pay
       </button>
     </ion-item> 
